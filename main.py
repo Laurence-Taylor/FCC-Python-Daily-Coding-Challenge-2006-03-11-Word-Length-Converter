@@ -1,13 +1,21 @@
 def convert_words(s):
+    # Create and init variable to return the answer
     s_to_return = ''
-    list_s = list(s)
+    # define previous position pointer
     prev_pos = 0
-    for i in range(len(list_s)):
-        if list_s[i] == ' ':
+    # iterate over each character
+    for i in range(len(s)):
+        # if character is a blank space then I found a new word
+        if s[i] == ' ':
+            # add the leng of the word to the string to return
             s_to_return += str(i-prev_pos) + ' '
+            # update the previous position pointer
             prev_pos = i + 1
-        if i == len(list_s)-1:
+        # if I reach the end of the string
+        if i == len(s)-1:
+            # add the leng of the last word to the string to return
             s_to_return += str(i-prev_pos+1)
+
     return s_to_return
 
 if __name__ == '__main__':
